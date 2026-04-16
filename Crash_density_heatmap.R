@@ -1,7 +1,7 @@
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(tidyverse, ggmap, scales)
 
-register_google(key = "AIzaSyDfAtP9-mYReHdJz3BmOH4ljjKJnTxq4VY")
+register_google(key = Sys.getenv("GOOGLE_API_KEY"))
 
 crash <- readr::read_csv("vic_road_crash_data.csv", show_col_types = FALSE)
 
